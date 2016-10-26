@@ -34,7 +34,7 @@ std::string CJNIRouteInfo::getInterface()
 CJNIInetAddress CJNIRouteInfo::getGateway()
 {
   return call_method<jhobject>(m_object,
-    "getGateway", "()Ljava/net/InetAddress ;");
+    "getGateway", "()Ljava/net/InetAddress;");
 }
 
 bool CJNIRouteInfo::isDefaultRoute()

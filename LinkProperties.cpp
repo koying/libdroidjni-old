@@ -41,19 +41,19 @@ std::string CJNILinkProperties::getInterfaceName()
 CJNIList<CJNIRouteInfo> CJNILinkProperties::getRoutes()
 {
   return call_method<jhobject>(m_object,
-                               "getRoutes", "(I)Ljava/util/List;");
+                               "getRoutes", "()Ljava/util/List;");
 }
 
 CJNIList<CJNILinkAddress> CJNILinkProperties::getLinkAddresses()
 {
   return call_method<jhobject>(m_object,
-                               "getLinkAddresses", "(I)Ljava/util/List;");
+                               "getLinkAddresses", "()Ljava/util/List;");
 }
 
 CJNIList<CJNIInetAddress> CJNILinkProperties::getDnsServers()
 {
   return call_method<jhobject>(m_object,
-                               "getDnsServers", "(I)Ljava/util/List;");
+                               "getDnsServers", "()Ljava/util/List;");
 }
 
 
