@@ -63,3 +63,12 @@ bool CJNIActivity::requestVisibleBehind(bool visible)
                                visible);
 }
 
+void CJNIActivity::enterPictureInPictureMode()
+{
+  if (CJNIBase::GetSDKVersion() < 24)
+    return;
+
+  call_method<void>(m_context,
+                    "enterPictureInPictureMode", "()V");
+}
+
