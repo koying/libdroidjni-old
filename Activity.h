@@ -37,8 +37,11 @@ public:
   bool moveTaskToBack(bool nonRoot);
   void startActivityForResult(const CJNIIntent &intent, int requestCode);
   bool requestVisibleBehind(bool visible);
+  void enterPictureInPictureMode();
 
   virtual void onVisibleBehindCanceled() = 0;
+  virtual void onMultiWindowModeChanged(bool isInMultiWindowMode) = 0;
+  virtual void onPictureInPictureModeChanged(bool isInPictureInPictureMode) = 0;
 
 private:
   CJNIActivity();
