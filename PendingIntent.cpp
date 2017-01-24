@@ -21,8 +21,8 @@
 #include "PendingIntent.h"
 #include "jutils/jutils-details.hpp"
 
-#include "android/jni/Context.h"
-#include "android/jni/Intent.h"
+#include "Context.h"
+#include "Intent.h"
 
 using namespace jni;
 
