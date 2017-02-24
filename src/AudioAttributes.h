@@ -41,7 +41,7 @@ public:
 protected:
   static const char *m_classname;
 
-  static void GetStaticValue(jhclass &c, int &field, char *value);
+  static void GetStaticValue(jhclass &c, int &field, const char *value);
 };
 
 class CJNIAudioAttributesBuilder : public CJNIBase

@@ -35,7 +35,7 @@ const char *CJNIAudioAttributes::m_classname = "android/media/AudioAttributes";
 const char *CJNIAudioAttributesBuilder::m_classname = "android/media/AudioAttributes$Builder";
 
 
-void CJNIAudioAttributes::GetStaticValue(jhclass& c, int& field, char* value)
+void CJNIAudioAttributes::GetStaticValue(jhclass& c, int& field, const char* value)
 {
   jfieldID id = get_static_field_id<jclass>(c, value, "I");
   if (id != NULL)

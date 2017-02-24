@@ -20,7 +20,6 @@
  */
 
 #include "jutils/jutils.hpp"
-#include "utils/log.h"
 
 #include <list>
 
@@ -75,7 +74,6 @@ protected:
       if (it->first == o)
         return it->second;
     }
-    CLog::Log(LOGDEBUG, "CJNIInterfaceImplem - instance not found: %d", s_object_map.size());
     return nullptr;
   }
   
