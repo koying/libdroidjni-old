@@ -25,7 +25,7 @@
 #include "WifiConfiguration.h"
 #include "ScanResult.h"
 #include "WifiManagerMulticastLock.h"
-#include "jutils/jutils-details.hpp"
+#include "jutils-details.hpp"
 
 using namespace jni;
 

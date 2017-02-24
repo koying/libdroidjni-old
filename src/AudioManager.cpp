@@ -22,7 +22,7 @@
 #include "Activity.h"
 #include "ClassLoader.h"
 
-#include "jutils/jutils-details.hpp"
+#include "jutils-details.hpp"
 
 #include <algorithm>
 

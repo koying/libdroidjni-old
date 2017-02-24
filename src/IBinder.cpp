@@ -19,7 +19,7 @@
  */
 
 #include "IBinder.h"
-#include "jutils/jutils-details.hpp"
+#include "jutils-details.hpp"
 
 #include "IInterface.h"
 #include "FileDescriptor.h"

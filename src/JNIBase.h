@@ -19,7 +19,7 @@
  *
  */
 
-#include "jutils/jutils.hpp"
+#include "jutils.hpp"
 
 #include <list>
 

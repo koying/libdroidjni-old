@@ -19,7 +19,7 @@
  */
 
 #include "ServiceManager.h"
-#include "jutils/jutils-details.hpp"
+#include "jutils-details.hpp"
 
 #include "IBinder.h"
 

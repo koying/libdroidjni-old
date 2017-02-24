@@ -11,8 +11,8 @@ file(GLOB ANDJNI_SOURCES
   jutils/*.cpp
   src/*.cpp
 )
-include_directories(BEFORE ${PROJECT_SOURCE_DIR})
+include_directories(BEFORE ${PROJECT_SOURCE_DIR}/jutils)
 add_library(androidjni STATIC ${ANDJNI_SOURCES})
 install (TARGETS androidjni ARCHIVE DESTINATION lib)
-file(GLOB_RECURSE header_files "*.h")
+file(GLOB_RECURSE header_files "*.h" "*.hpp" "*.inc")
 install (FILES ${header_files} DESTINATION include/androidjni)

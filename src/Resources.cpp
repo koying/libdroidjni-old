@@ -20,7 +20,7 @@
 
 #include "Resources.h"
 #include "Drawable.h"
-#include "jutils/jutils-details.hpp"
+#include "jutils-details.hpp"
 
 using namespace jni;
 

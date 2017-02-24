@@ -24,7 +24,7 @@
 #include "ClassLoader.h"
 #include "SurfaceTexture.h"
 
-#include "jutils/jutils-details.hpp"
+#include "jutils-details.hpp"
 
 #include <algorithm>
 

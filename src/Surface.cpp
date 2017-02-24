@@ -22,7 +22,7 @@
 #include "Surface.h"
 #include "SurfaceTexture.h"
 
-#include "jutils/jutils-details.hpp"
+#include "jutils-details.hpp"
 
 using namespace jni;
 

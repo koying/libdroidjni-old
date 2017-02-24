@@ -19,7 +19,7 @@
  */
 
 #include "PendingIntent.h"
-#include "jutils/jutils-details.hpp"
+#include "jutils-details.hpp"
 
 #include "Context.h"
 #include "Intent.h"

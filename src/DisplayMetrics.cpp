@@ -19,7 +19,7 @@
  */
 
 #include "DisplayMetrics.h"
-#include "jutils/jutils-details.hpp"
+#include "jutils-details.hpp"
 
 using namespace jni;
 const char *CJNIDisplayMetrics::m_classname = "android/util/DisplayMetrics";

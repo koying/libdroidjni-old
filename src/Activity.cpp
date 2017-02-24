@@ -22,7 +22,7 @@
 #include "Intent.h"
 #include "WindowManager.h"
 
-#include "jutils/jutils-details.hpp"
+#include "jutils-details.hpp"
 
 #include <android/native_activity.h>
 

@@ -24,7 +24,7 @@
 #include "Intent.h"
 #include "IntentFilter.h"
 #include "ClassLoader.h"
-#include "jutils/jutils-details.hpp"
+#include "jutils-details.hpp"
 #include "BroadcastReceiver.h"
 #include "JNIThreading.h"
 #include "ApplicationInfo.h"

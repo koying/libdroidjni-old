@@ -19,7 +19,7 @@
  */
 
 #include "Build.h"
-#include "jutils/jutils-details.hpp"
+#include "jutils-details.hpp"
 
 using namespace jni;
 const char *CJNIBuild::m_classname = "android/os/Build";

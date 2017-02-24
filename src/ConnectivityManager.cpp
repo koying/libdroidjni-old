@@ -23,7 +23,7 @@
 #include "NetworkInfo.h"
 #include "LinkProperties.h"
 
-#include "jutils/jutils-details.hpp"
+#include "jutils-details.hpp"
 
 using namespace jni;
 

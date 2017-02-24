@@ -19,7 +19,7 @@
  */
 
 #include "Cursor.h"
-#include "jutils/jutils-details.hpp"
+#include "jutils-details.hpp"
 #include "URI.h"
 
 using namespace jni;

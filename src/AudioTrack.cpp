@@ -19,7 +19,7 @@
  */
 
 #include "AudioTrack.h"
-#include "jutils/jutils-details.hpp"
+#include "jutils-details.hpp"
 #include "AudioFormat.h"
 #include "ByteBuffer.h"
 

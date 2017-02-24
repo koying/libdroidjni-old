@@ -19,7 +19,7 @@
  */
 
 #include "PackageItemInfo.h"
-#include "jutils/jutils-details.hpp"
+#include "jutils-details.hpp"
 
 using namespace jni;
 const char *CJNIPackageItemInfo::m_classname = "android/content/pm/PackageItemInfo";

@@ -20,7 +20,7 @@
 
 #include "PowerManager.h"
 #include "WakeLock.h"
-#include "jutils/jutils-details.hpp"
+#include "jutils-details.hpp"
 
 using namespace jni;
 

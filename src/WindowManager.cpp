@@ -21,7 +21,7 @@
 #include "WindowManager.h"
 #include "Display.h"
 
-#include "jutils/jutils-details.hpp"
+#include "jutils-details.hpp"
 
 using namespace jni;
 

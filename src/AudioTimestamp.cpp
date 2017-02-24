@@ -18,7 +18,7 @@
  */
 
 #include "AudioTimestamp.h"
-#include "jutils/jutils-details.hpp"
+#include "jutils-details.hpp"
 
 using namespace jni;
 
