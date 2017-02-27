@@ -98,6 +98,7 @@ int CJNIMediaCodecInfoCodecProfileLevel::AACObjectERLC(0);
 int CJNIMediaCodecInfoCodecProfileLevel::AACObjectLD(0);
 int CJNIMediaCodecInfoCodecProfileLevel::AACObjectHE_PS(0);
 int CJNIMediaCodecInfoCodecProfileLevel::AACObjectELD(0);
+
 const char *CJNIMediaCodecInfoCodecProfileLevel::m_classname = "android/media/MediaCodecInfo$CodecProfileLevel";
 
 void CJNIMediaCodecInfoCodecProfileLevel::PopulateStaticFields()
@@ -239,6 +240,12 @@ int CJNIMediaCodecInfoCodecCapabilities::COLOR_Format24BitARGB6666(0);
 int CJNIMediaCodecInfoCodecCapabilities::COLOR_Format24BitABGR6666(0);
 int CJNIMediaCodecInfoCodecCapabilities::COLOR_TI_FormatYUV420PackedSemiPlanar(0);
 int CJNIMediaCodecInfoCodecCapabilities::COLOR_QCOM_FormatYUV420SemiPlanar(0);
+
+std::string CJNIMediaCodecInfoCodecCapabilities::FEATURE_AdaptivePlayback;
+std::string CJNIMediaCodecInfoCodecCapabilities::FEATURE_IntraRefresh;
+std::string CJNIMediaCodecInfoCodecCapabilities::FEATURE_SecurePlayback;
+std::string CJNIMediaCodecInfoCodecCapabilities::FEATURE_TunneledPlayback;
+
 /* This one isn't exposed in 4.4 */
 int CJNIMediaCodecInfoCodecCapabilities::OMX_QCOM_COLOR_FormatYVU420SemiPlanarInterlace(0x7FA30C04);
 const char *CJNIMediaCodecInfoCodecCapabilities::m_classname = "android/media/MediaCodecInfo$CodecCapabilities";
@@ -293,7 +300,23 @@ void CJNIMediaCodecInfoCodecCapabilities::PopulateStaticFields()
     COLOR_Format24BitABGR6666         = (get_static_field<int>(clazz, "COLOR_Format24BitABGR6666"));
     COLOR_TI_FormatYUV420PackedSemiPlanar = (get_static_field<int>(clazz, "COLOR_TI_FormatYUV420PackedSemiPlanar"));
     COLOR_QCOM_FormatYUV420SemiPlanar = (get_static_field<int>(clazz, "COLOR_QCOM_FormatYUV420SemiPlanar"));
+
+    FEATURE_AdaptivePlayback    = jcast<std::string>(get_static_field<jhstring>(clazz,"FEATURE_AdaptivePlayback"));
+    FEATURE_SecurePlayback      = jcast<std::string>(get_static_field<jhstring>(clazz,"FEATURE_SecurePlayback"));
+    FEATURE_TunneledPlayback    = jcast<std::string>(get_static_field<jhstring>(clazz,"FEATURE_TunneledPlayback"));
+
+    if(GetSDKVersion() >= 24)
+    {
+      FEATURE_IntraRefresh        = jcast<std::string>(get_static_field<jhstring>(clazz,"FEATURE_IntraRefresh"));
+    }
   }
+}
+
+bool CJNIMediaCodecInfoCodecCapabilities::isFeatureSupported(const std::string& name)
+{
+  return call_method<jboolean>(m_object,
+    "isFeatureSupported", "(Ljava/lang/String;)Z",
+                               jcast<jhstring>(name));
 }
 
 std::vector<int> CJNIMediaCodecInfoCodecCapabilities::colorFormats() const
@@ -347,5 +370,5 @@ const CJNIMediaCodecInfoCodecCapabilities CJNIMediaCodecInfo::getCapabilitiesFor
 {
   return call_method<jhobject>(m_object,
     "getCapabilitiesForType", "(Ljava/lang/String;)Landroid/media/MediaCodecInfo$CodecCapabilities;",
-    jcast<jhstring>(type));
+                               jcast<jhstring>(type));
 }

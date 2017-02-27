@@ -128,7 +128,7 @@ public android.media.MediaCodecInfo$CodecProfileLevel();
 class CJNIMediaCodecInfoCodecCapabilities : public CJNIBase
 {
 public:
-  CJNIMediaCodecInfoCodecCapabilities(const jni::jhobject &object) : CJNIBase(object) {};
+  CJNIMediaCodecInfoCodecCapabilities(const jni::jhobject &object) : CJNIBase(object) {}
   //~CJNIMediaCodecInfoCodecCapabilities() {};
 
   std::vector<int> colorFormats() const;
@@ -182,6 +182,13 @@ public:
   static int COLOR_TI_FormatYUV420PackedSemiPlanar;
   static int COLOR_QCOM_FormatYUV420SemiPlanar;
   static int OMX_QCOM_COLOR_FormatYVU420SemiPlanarInterlace;
+
+  static std::string FEATURE_AdaptivePlayback;
+  static std::string FEATURE_IntraRefresh;
+  static std::string FEATURE_SecurePlayback;
+  static std::string FEATURE_TunneledPlayback;
+
+  bool isFeatureSupported(const std::string& name);
 
 private:
   CJNIMediaCodecInfoCodecCapabilities();
