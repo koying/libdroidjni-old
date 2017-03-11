@@ -133,19 +133,19 @@ void CJNIAudioTrack::release()
   call_method<void>(m_object, "release", "()V");
 }
 
-int CJNIAudioTrack::write(std::vector<float> audioData, int offsetInFloats, int sizeInFloats, int writeMode)
+int CJNIAudioTrack::write(const std::vector<float>& audioData, int offsetInFloats, int sizeInFloats, int writeMode)
 {
   return call_method<int>(m_object, "write", "([FIII)I", 
                           jcast<jhfloatArray>(audioData), offsetInFloats, sizeInFloats, writeMode);
 }
 
-int CJNIAudioTrack::write(std::vector<int16_t> audioData, int offsetInShorts, int sizeInShorts)
+int CJNIAudioTrack::write(const std::vector<int16_t>& audioData, int offsetInShorts, int sizeInShorts)
 {
   return call_method<int>(m_object, "write", "([SII)I", 
                           jcast<jhshortArray>(audioData), offsetInShorts, sizeInShorts);
 }
 
-int CJNIAudioTrack::write(std::vector<char> audioData, int offsetInBytes, int sizeInBytes)
+int CJNIAudioTrack::write(const std::vector<char>& audioData, int offsetInBytes, int sizeInBytes)
 {
   return call_method<int>(m_object, "write", "([BII)I", 
                           jcast<jhbyteArray>(audioData), offsetInBytes, sizeInBytes);
@@ -163,13 +163,13 @@ int CJNIAudioTrack::write(const CJNIByteBuffer& audioData, int sizeInBytes, int 
                           audioData.get_raw(), sizeInBytes, writeMode, timestamp);
 }
 
-int CJNIAudioTrack::write(std::vector<int16_t> audioData, int offsetInShorts, int sizeInShorts, int writeMode)
+int CJNIAudioTrack::write(const std::vector<int16_t>& audioData, int offsetInShorts, int sizeInShorts, int writeMode)
 {
   return call_method<int>(m_object, "write", "([SIII)I", 
                           jcast<jhshortArray>(audioData), offsetInShorts, sizeInShorts, writeMode);
 }
 
-int CJNIAudioTrack::write(std::vector<char> audioData, int offsetInBytes, int sizeInBytes, int writeMode)
+int CJNIAudioTrack::write(const std::vector<char>& audioData, int offsetInBytes, int sizeInBytes, int writeMode)
 {
   return call_method<int>(m_object, "write", "([BIII)I", 
                           jcast<jhbyteArray>(audioData), offsetInBytes, sizeInBytes, writeMode);

@@ -43,13 +43,13 @@ class CJNIAudioTrack : public CJNIBase
     void  stop();
     void  flush();
     void  release();
-    int   write(std::vector<float> audioData, int offsetInFloats, int sizeInFloats, int writeMode);
-    int   write(std::vector<int16_t> audioData, int offsetInShorts, int sizeInShorts);
-    int   write(std::vector<char> audioData, int offsetInBytes, int sizeInBytes);
+    int   write(const std::vector<float>& audioData, int offsetInFloats, int sizeInFloats, int writeMode);
+    int   write(const std::vector<int16_t>& audioData, int offsetInShorts, int sizeInShorts);
+    int   write(const std::vector<char>& audioData, int offsetInBytes, int sizeInBytes);
     int   write(const CJNIByteBuffer& audioData, int sizeInBytes, int writeMode);
     int   write(const CJNIByteBuffer& audioData, int sizeInBytes, int writeMode, int64_t timestamp);
-    int   write(std::vector<int16_t> audioData, int offsetInShorts, int sizeInShorts, int writeMode);
-    int   write(std::vector<char> audioData, int offsetInBytes, int sizeInBytes, int writeMode);
+    int   write(const std::vector<int16_t>& audioData, int offsetInShorts, int sizeInShorts, int writeMode);
+    int   write(const std::vector<char>& audioData, int offsetInBytes, int sizeInBytes, int writeMode);
     int   getState();
     int   getPlayState();
     int   getPlaybackHeadPosition();
